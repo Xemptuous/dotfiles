@@ -1,0 +1,15 @@
+# vim: filetype=swayconfig
+
+set $wallpaper ~/Pictures/Wallpapers/polygon-black.jpg
+output "*" bg $wallpaper fill adaptive_sync off
+# output "*" bg "#000000" solid_color adaptive_sync off
+output DP-3 resolution 2560x1440@170.004Hz position 0,0 max_render_time 3
+for_window [class="st-256color"] max_render_time 1
+for_window [app_id="^firefox$"] max_render_time 1
+for_window [app_id="^org.qutebrowser.qutebrowser$"] max_render_time 1
+for_window [app_id="^qutebrowser$"] max_render_time 1
+
+bar {
+    position top
+    swaybar_command waybar
+}

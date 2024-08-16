@@ -1,0 +1,19 @@
+live_config_reload = true
+
+import = [
+    "~/.config/alacritty/themes/catppuccin_mocha.toml"
+]
+
+[env]
+TERM="xterm-256color"
+fish_vi_force_cursor="1"
+
+[window]
+decorations = "None"
+
+[font]
+size = 10.0
+normal = { family = "MesloLGSDZ Nerd Font", style = "Regular" }
+bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
+italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
+bold_italic = { family = "MesloLGSDZ Nerd Font", style = "Bold Italic" }

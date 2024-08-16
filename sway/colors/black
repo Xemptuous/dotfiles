@@ -1,0 +1,9 @@
+# vim: filetype=swayconfig
+set $black #000000
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $black $black $black $black   $black
+client.focused_inactive $black $black $black $black   $black
+client.unfocused        $black $black $black $black   $black
+client.urgent           $black $black $black $black   $black
+client.placeholder      $black $black $black $black   $black
