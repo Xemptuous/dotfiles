@@ -4,6 +4,9 @@ theme = "catppuccin_mocha"
 line-number = "relative"
 mouse = false
 completion-timeout = 5
+completion-trigger-len = 1
+bufferline = "multiple"
+color-modes = true
 popup-border = "all"
 
 [editor.cursor-shape]
@@ -19,12 +22,15 @@ render = true
 skip-levels = 1
 
 [editor.statusline]
-left = ["mode", "spinner", "read-only-indicator", "version-control", "register"]
+left = ["mode", "spinner", "read-only-indicator", "version-control", "file-name", "register"]
 center = ["file-base-name", "file-modification-indicator"]
-right  = ["diagnostics", "primary-selection-length", "position", "position-percentage", "file-encoding"]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+right  = ["diagnostics", "selections", "primary-selection-length", "position", "position-percentage", "file-encoding"]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[editor.smart-tab]
+enable = false
 
 [keys.normal]
 # Buffers
