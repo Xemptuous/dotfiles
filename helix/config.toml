@@ -4,6 +4,7 @@ theme = "catppuccin_mocha"
 line-number = "relative"
 mouse = false
 completion-timeout = 5
+idle-timeout = 1
 completion-trigger-len = 1
 bufferline = "multiple"
 color-modes = true
@@ -139,10 +140,9 @@ W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "collapse_
 g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"] }
 
 [keys.insert]
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "normal_mode"]
-j = { k = "normal_mode" }
-k = { j = "normal_mode" }
+# j = { k = "normal_mode" }
+# k = { j = "normal_mode" }
 
 
 [keys.select]

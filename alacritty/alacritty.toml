@@ -13,7 +13,23 @@ decorations = "None"
 
 [font]
 size = 10.0
-normal = { family = "MesloLGSDZ Nerd Font", style = "Regular" }
-bold = { family = "MesloLGSDZ Nerd Font", style = "Bold" }
-italic = { family = "MesloLGSDZ Nerd Font", style = "Italic" }
-bold_italic = { family = "MesloLGSDZ Nerd Font", style = "Bold Italic" }
+
+[font.normal]
+# family = "Hack Nerd Font"
+family = "MesloLGSDZ Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Hack Nerd Font"
+# family = "MesloLGSDZ Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+# family = "MesloLGSDZ Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+# family = "MesloLGSDZ Nerd Font"
+style = "Bold Italic"
