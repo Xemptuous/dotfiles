@@ -14,10 +14,10 @@ input type:keyboard repeat_delay 200
 input type:keyboard repeat_rate 90
 
 include ./display
-include ./colors/mocha
+include ./colors/latte
 include ./keybinds
 
 include /etc/sway/config.d/*
 exec --no-startup-id /usr/share/sway-contrib/i3-autotiling.py
 exec --no-startup-id /usr/share/sway-contrib/autoname-workspaces.py
-exec --no-startup-id /usr/share/sway-contrib/inactive-windows-transparency.py -i 0.5 -f 1.0
+exec --no-startup-id /usr/share/sway-contrib/inactive-windows-transparency.py -o 0.5 -f 1.0
