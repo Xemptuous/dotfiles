@@ -1,7 +1,10 @@
 # exec xrdb -I$HOME ~/.Xresources
 default_border pixel 1
+default_floating_border pixel 1
 smart_borders on
 hide_edge_borders smart
+for_window [class=".*"] border pixel 1
+for_window [app_id=".*"] border pixel 1
 
 gaps inner 8
 gaps outer 0
