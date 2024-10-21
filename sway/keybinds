@@ -1,5 +1,7 @@
 # vim: filetype=swayconfig
-set $term alacritty
+# set $term alacritty
+exec foot --server
+set $term footclient
 set $mod Mod4
 
 set $left h
