@@ -16,7 +16,7 @@ export MANROFFOPT="-c"
 export BAT_THEME="Catppuccin Mocha"
 export BAT_PAGER="less"
 export EZA_COLORS="da=38;5;240"
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
+# export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
 # Aliases
 # eza
@@ -49,6 +49,7 @@ alias python="python3 $argv"
 alias py="python3 $argv"
 
 alias cpwd="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
+alias mp3-edit="id3v2 $argv"
 
 # Editors
 alias nv="nvim $argv"
@@ -168,10 +169,10 @@ if status is-interactive
     set fish_cursor_default block
     set fish_cursor_replace_one underscore
     set fish_cursor_replace underscore
-    set fish_cursor_external line
+    set fish_cursor_external block # line
     set fish_cursor_visual block
-    set fish_cursor_visual line
-    set fish_cursor_insert line
+    set fish_cursor_visual block # line
+    set fish_cursor_insert block # line
     fish_default_key_bindings -M insert
     fish_vi_key_bindings --no-erase insert
     bind --mode insert jk 'if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end'

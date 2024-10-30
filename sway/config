@@ -1,26 +1,31 @@
 # exec xrdb -I$HOME ~/.Xresources
 default_border pixel 1
-default_floating_border pixel 1
 smart_borders on
 hide_edge_borders smart
-for_window [class=".*"] border pixel 1
-for_window [app_id=".*"] border pixel 1
 
-gaps inner 8
-gaps outer 0
 smart_gaps on
+gaps {
+    inner 8
+    outer 0
+}
 
 focus_follows_mouse no
 focus_on_window_activation smart
 
-input type:keyboard repeat_delay 200
-input type:keyboard repeat_rate 90
+input {
+    type:keyboard repeat_delay 200
+    type:keyboard repeat_rate 90
+}
 
-include ./display
-include ./colors/latte
-include ./keybinds
+include {
+    ./display
+    ./colors/mocha
+    ./keybinds
+    /etc/sway/config.d/*
+}
 
-include /etc/sway/config.d/*
-exec --no-startup-id /usr/share/sway-contrib/autotiling.py
-exec --no-startup-id /usr/share/sway-contrib/autoname-workspaces.py
-exec --no-startup-id /usr/share/sway-contrib/inactive-windows-transparency.py -o 0.5 -f 1.0
+exec --no-startup-id {
+    /usr/share/sway-contrib/i3-autotiling.py
+    /usr/share/sway-contrib/autoname-workspaces.py
+    /usr/share/sway-contrib/inactive-windows-transparency.py -o 0.5 -f 1.0
+}

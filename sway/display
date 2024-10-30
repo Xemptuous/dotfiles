@@ -3,7 +3,21 @@
 set $wallpaper ~/Pictures/Wallpapers/polygon-black.jpg
 output "*" bg $wallpaper fill adaptive_sync off
 # output "*" bg "#000000" solid_color adaptive_sync off
-output DP-3 resolution 2560x1440@170.004Hz position 0,0 max_render_time 3
+
+output DP-2 resolution 2560x1440@170.004Hz position 1440,0 max_render_time 3
+output DP-3 resolution 2560x1440@75.001Hz position 0,0 max_render_time 3 transform 270
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-3
+workspace 7 output DP-3
+workspace 8 output DP-3
+workspace 9 output DP-3
+workspace 10 output DP-3
+
 for_window [class="st-256color"] max_render_time 1
 for_window [app_id="^firefox$"] max_render_time 1
 for_window [app_id="^org.qutebrowser.qutebrowser$"] max_render_time 1

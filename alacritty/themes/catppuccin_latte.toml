@@ -7,9 +7,9 @@ dim_foreground = '#4C4F69' # text
 bright_foreground = '#4C4F69' # text
 
 # Cursor colors
-[colors.cursor]
-text = '#EFF1F5' # base
-cursor = '#DC8A78' # rosewater
+# [colors.cursor]
+# text = '#EFF1F5' # base
+# cursor = '#DC8A78' # rosewater
 
 [colors.vi_mode_cursor]
 text = '#EFF1F5' # base

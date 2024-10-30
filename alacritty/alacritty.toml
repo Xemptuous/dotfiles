@@ -1,7 +1,15 @@
+[general]
 live_config_reload = true
-
 import = [
     "~/.config/alacritty/themes/catppuccin_mocha.toml"
+]
+
+[keyboard]
+bindings = [
+    { key = "k", mods = "Control", action = "ScrollLineUp"},
+    { key = "k", mods = "Control|Shift", action = "ScrollHalfPageUp"},
+    { key = "j", mods = "Control", action = "ScrollLineDown"},
+    { key = "j", mods = "Control|Shift", action = "ScrollHalfPageDown"},
 ]
 
 [env]
