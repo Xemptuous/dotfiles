@@ -8,11 +8,13 @@ if test "$(count $argv)" -ge 1
         set from latte
         set to mocha
         set ftheme "Catppuccin Mocha"
+        sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     else if test $argv[1] = off
         set -U NIGHTMODE off
         set from mocha
         set to latte
         set ftheme "Catppuccin Latte"
+        sed -i s/dark/light/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     end
 else
     if test $NIGHTMODE = on
@@ -20,11 +22,13 @@ else
         set from mocha
         set to latte
         set ftheme "Catppuccin Latte"
+        sed -i s/dark/light/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     else
         set -U NIGHTMODE on
         set from latte
         set to mocha
         set ftheme "Catppuccin Mocha"
+        sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     end
 end
 
@@ -49,9 +53,18 @@ for addr in $XDG_RUNTIME_DIR/nvim.*
 end
 
 # qutebrowser instances
-qutebrowser ":config-source" 2&>/dev/null
+if test "$(pgrep qute)" != ""
+    qutebrowser ":config-source" 2&>/dev/null
+    if test $NIGHTMODE = on
+        qutebrowser ":set colors.webpage.darkmode.enabled true" 2&>/dev/null
+    else
+        qutebrowser ":set colors.webpage.darkmode.enabled false" 2&>/dev/null
+    end
+end
+
+# hyprpaper
 if test $NIGHTMODE = on
-    qutebrowser ":set colors.webpage.darkmode.enabled true" 2&>/dev/null
+    hyprctl hyprpaper wallpaper "DP-2,~/Pictures/Wallpapers/mountain-trippy.png"
 else
-    qutebrowser ":set colors.webpage.darkmode.enabled false" 2&>/dev/null
+    hyprctl hyprpaper wallpaper "DP-2,~/Pictures/Wallpapers/white-china.jpg"
 end
