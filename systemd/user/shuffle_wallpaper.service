@@ -1,0 +1,4 @@
+[Unit]
+Description="Shuffle Wallpaper Script"
+[Service]
+ExecStart=/home/xempt/.scripts/shuffle_wallpaper.sh
