@@ -4,4 +4,4 @@ Description="Shuffle Wallpapers"
 OnCalendar=*:0/15
 Unit=shuffle_wallpaper.service
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
