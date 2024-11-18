@@ -1,19 +1,25 @@
 if test (tty) = /dev/tty1
-    sway
+    #sway
+    hyprland
 end
 
 set fish_greeting
 
 source ~/.creds.sh
 
+# man colors
+set -g man_blink -o red
+set -g man_bold -o blue
+set -g man_standout -b black red
+set -g man_underline -u red
+
 export EDITOR=nvim
 export VISUAL=nvim
 export GCM_CREDENTIAL_STORE=cache
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.ripgreprc"
-export MANROFFOPT="-c"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
-export BAT_THEME="Catppuccin Mocha"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANROFFOPT="-c"
+export BAT_THEME="catppuccin_mocha"
 export BAT_PAGER="less"
 export EZA_COLORS="da=38;5;240"
 # export LS_COLORS="$(vivid generate catppuccin-mocha)"

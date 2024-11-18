@@ -1,0 +1,123 @@
+@import "mocha.css";
+
+* {
+  font-size: 13px;
+  font-family: Hack Nerd Font;
+}
+
+window#waybar {
+  /* background: #292b2e; */
+  /* color: #fdf6e3; */
+  background: @crust;
+  /*background: #11111b;*/
+  /* background: rgba(17, 17, 27, 0); */
+  color: @text;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  /* color: #1a1a1a; */
+  color: @base;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: @crust;
+  background: @base;
+  /* color: #292b2e; */
+  /* background: #1a1a1a; */
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#network,
+#temperature,
+#cpu,
+#battery,
+#disk,
+#tray {
+  background: @base;
+}
+
+tooltip {
+  background: @base;
+  color: @text;
+  font-size: 22px;
+  font-family: Hack Nerd Font;
+}
+
+#workspaces button {
+  padding: 0 2px;
+  color: @subtext1;
+  border: 1px double @surface0;
+}
+
+#workspaces button.active {
+  /* color: #268bd2; */
+  color: @red;
+  background: @surface0;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button:hover {
+  background: @surface0;
+  border: @base;
+  padding: 0 3px;
+}
+
+#pulseaudio {
+  color: #268bd2;
+}
+
+#memory {
+  color: @mauve;
+}
+
+#cpu {
+  color: @blue;
+}
+
+#temperature {
+  color: @peach;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#battery {
+  color: #859900;
+}
+
+#network {
+  color: @sky;
+}
+
+#network.disabled,
+#network.disconnected {
+  color: @red
+}
+
+#disk {
+  color: @green;
+}
+
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#temperature,
+#network,
+#battery,
+#disk {
+  padding: 0 10px;
+}
