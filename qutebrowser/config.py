@@ -168,6 +168,7 @@ config.bind("<Shift+Up>", "tab-move +")
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")
 config.bind("<Ctrl+Shift+D>", "config-cycle colors.webpage.darkmode.enabled")
+config.bind(";c", "hint images download")
 
 config.set(
     "content.register_protocol_handler",

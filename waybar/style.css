@@ -1,36 +1,17 @@
 @import "mocha.css";
 
 * {
-	font-size: 13px;
-	font-family: Hack Nerd Font;
+  font-size: 13px;
+  font-family: Hack Nerd Font;
 }
 
 window#waybar {
-	/* background: #292b2e; */
-	/* color: #fdf6e3; */
-    background: @crust;
-    /*background: #11111b;*/
-    /* background: rgba(17, 17, 27, 0); */
-    color: @text;
+  background: transparent;
+  color: @text;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	/* color: #1a1a1a; */
-    color: @base;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-    color: @crust;
-    background: @base;
-	/* color: #292b2e; */
-	/* background: #1a1a1a; */
-}
 
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
+#clock,
 #pulseaudio,
 #memory,
 #network,
@@ -39,66 +20,92 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: @base;
+  background: @crust;
+  /* background: @base; */
+  /* background: transparent; */
+  /* background: rgba(0, 0, 0, 0.2); */
+  border-radius: 0rem;
+  margin: 5px 10px;
+  padding: 0rem 1rem;
 }
 
 tooltip {
-	background: @base;
+  background: @base;
   color: @text;
-	font-size: 22px;
-	font-family: Hack Nerd Font;
+  font-size: 22px;
+  font-family: Hack Nerd Font;
+}
+
+#workspaces {
+  background: transparent;
+  border-radius: 1rem;
+  margin: 5px 5px;
+  padding: 0rem 0rem;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: @subtext1;
-    border: 1px double @surface0;
+  padding: 0 4px;
+  color: @blue;
+  border-radius: 1rem;
 }
-#workspaces button.focused {
-	/* color: #268bd2; */
-    color: @red;
-    background: @surface0;
+
+#workspaces button.active {
+  color: @green;
 }
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+
+#workspaces button.special {
+  color: @mauve;
 }
-#workspaces button:hover {
-	background: @surface0;
-	border: @base;
-	padding: 0 3px;
+
+#workspaces button.empty {
+  color: @subtext1;
 }
 
 #pulseaudio {
-	color: #268bd2;
+  color: #268bd2;
 }
+
 #memory {
-	color: @mauve;
+  color: @mauve;
 }
+
 #cpu {
-	color: @blue;
+  color: @blue;
+  border-radius: 1rem 0 0 1rem;
 }
+
+
 #temperature {
-	color: @peach;
+  color: @peach;
 }
+
 #temperature.critical {
-	color: @red;
+  color: @red;
 }
+
 #battery {
-	color: #859900;
+  color: #859900;
 }
+
 #network {
-    color: @sky;
+  color: @sky;
+  border-radius: 0 1rem 1rem 0;
 }
+
 #network.disabled,
 #network.disconnected {
-    color: @red
+  color: @red;
 }
+
 #disk {
-	color: @green;
+  color: @green;
 }
 
+#clock {
+  border-radius: 1rem;
+}
 
+#tray,
 #clock,
 #pulseaudio,
 #memory,
@@ -107,5 +114,12 @@ tooltip {
 #network,
 #battery,
 #disk {
-	padding: 0 10px;
+  background-color: @crustopaque;
+  padding: 0 1rem;
+  margin: 5px 0;
+}
+
+#tray {
+  background: transparent;
+  border-radius: 1rem;
 }

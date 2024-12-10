@@ -13,6 +13,10 @@ set -g man_bold -o blue
 set -g man_standout -b black red
 set -g man_underline -u red
 
+function cd
+    builtin cd $argv && ls
+end
+
 export EDITOR=nvim
 export VISUAL=nvim
 export GCM_CREDENTIAL_STORE=cache
@@ -68,6 +72,7 @@ alias nvs="nvim -u $HOME/.config/nvim/simple.lua $argv"
 alias hx="helix"
 
 alias zj="zellij"
+alias rs="rust-script"
 
 # Git
 alias gfa="git fetch --all --prune --jobs=10"
