@@ -1,0 +1,21 @@
+# mkinitcpio preset file for the 'linux' package
+
+# ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux"
+
+PRESETS=('default' 'fallback')
+
+default_options="-S udev,block,keyboard,fsck,consolefont"
+default_image="/boot/initramfs-linux.img"
+# default_uki="/boot/EFI/Linux/arch-linux.efi"
+# default_options="-S udev,block,mdadm_udev,filesystems,keyboard,fsck,consolefont"
+# default_config="/etc/mkinitcpio.conf"
+
+# normal_config="/etc/mkinitcpio.conf"
+# normal_image="/boot/initramfs-linux-normal.img"
+# normal_uki="/efi/EFI/Linux/arch-linux.efi"
+
+fallback_options="-S autodetect"
+fallback_image="/boot/initramfs-linux-fallback.img"
+# fallback_uki="/boot/EFI/Linux/arch-linux-fallback.efi"
+# fallback_config="/etc/mkinitcpio.conf"
