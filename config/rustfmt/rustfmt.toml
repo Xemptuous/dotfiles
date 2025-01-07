@@ -1,0 +1,4 @@
+edition = "2021"
+fn_single_line = true
+match_block_trailing_comma = true
+struct_lit_width = 60
