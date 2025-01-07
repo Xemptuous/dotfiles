@@ -33,6 +33,7 @@ else
 end
 
 sed -i "s/$from/$to/" ~/.config/fish/config.fish 2&>/dev/null &
+sed -i "s/$from/$to/" ~/.config/fish/exports.fish 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/alacritty/alacritty.toml 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/qutebrowser/config.py 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/nvim/lua/plugins/colorscheme.lua 2&>/dev/null &
@@ -45,21 +46,27 @@ sed -i "s/$from/$to/" ~/.config/hypr/hyprland.conf 2&>/dev/null &
 
 # swaymsg reload &
 echo y | fish_config theme save "$ftheme" &
-set -U hydro_color_git $fish_color_host_remote
+set -U hydro_color_git $fish_color_host_remote &
 
 # neovim instances
 for addr in $XDG_RUNTIME_DIR/nvim.*
-    nvim --server $addr --remote-send ":colorscheme catppuccin-$to<CR>"
+    nvim --server $addr --remote-send ":colorscheme catppuccin-$to<CR>" &
 end
 
 # qutebrowser instances
 if test "$(pgrep qute)" != ""
-    qutebrowser ":config-source" 2&>/dev/null
+    qutebrowser ":config-source" 2&>/dev/null &
     if test $NIGHTMODE = on
-        qutebrowser ":set colors.webpage.darkmode.enabled true" 2&>/dev/null
+        qutebrowser ":set colors.webpage.darkmode.enabled true" 2&>/dev/null &
     else
-        qutebrowser ":set colors.webpage.darkmode.enabled false" 2&>/dev/null
+        qutebrowser ":set colors.webpage.darkmode.enabled false" 2&>/dev/null &
     end
 end
 
-sh ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
+sh ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null &
+
+# st term
+if test -e /usr/local/share/st
+    sed -i "s/$from/$to/" /usr/local/share/st/config.h 2&>/dev/null &
+    make -C /usr/local/share/st -s -j2 &
+end

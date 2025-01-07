@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WALLPAPER_DIR="$HOME/Pictures/Wallpapers/dark/"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/light/"
 
 OLDIFS=$IFS
 IFS=$'\n'
