@@ -1,0 +1,12 @@
+#!/bin/bash
+
+VM_NAME="$1"
+EVENT="$2"
+
+HOOK_DIR="/etc/libvirt/hooks/qemu.d/${VM_NAME}/${EVENT}"
+
+if [ -d "${HOOK_DIR}" ]; then
+    for script in "${HOOK_DIR}"/*.sh; do
+        [ -x "$script" ] && "$script" "$@"
+    done
+fi
