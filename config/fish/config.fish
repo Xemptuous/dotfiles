@@ -32,6 +32,8 @@ if status is-interactive
     # pyenv
     set -Ux PYENV_ROOT $HOME/.pyenv
     fish_add_path $HOME/.local/bin
+    fish_add_path $HOME/go/bin
+    fish_add_path $HOME/Git/Nim/bin/
     fish_add_path $HOME/.local/share/nvim/mason/bin
 
     if type -q pyenv

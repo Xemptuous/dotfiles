@@ -10,4 +10,5 @@ export BAT_PAGER="less"
 # export EZA_COLORS="da=38;5;240"
 export QT_QPA_PLATFORMTHEME='qt6ct'
 export XCURSOR_PATH="~/.icons"
-export LS_COLORS="$(vivid generate catppuccin-latte)"
+# export LS_COLORS="$(vivid generate catppuccin-mocha)"
+set -U LS_COLORS (vivid generate catppuccin-mocha)

@@ -15,8 +15,12 @@ alias l3="eza -TL 3 --icons --git --color=always --no-user --time-style long-iso
 alias pacman="sudo pacman"
 
 # bat
-#alias bat="bat --color=always $argv"
-alias less="bat --color=always $argv"
+alias cat="bat --style=plain --paging=never $argv"
+alias bat="bat --style='header,grid' $argv"
+alias less="bat --style='header,grid' $argv"
+
+# alias fd="set -l LS_COLORS (vivid generate catppuccin-latte); $LS_COLORS fd $argv"
+alias rgf="rg --files | rg $argv"
 
 # fzf
 alias fzf="fzf --height ~40% --layout reverse --border"
@@ -47,6 +51,7 @@ alias hx="helix"
 alias zj="zellij"
 alias rs="rust-script"
 
+alias gs="git status --short"
 # Git
 alias gfa="git fetch --all --prune --jobs=10"
 alias gm="git merge"
@@ -87,3 +92,18 @@ alias paint="rnote"
 
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
+
+function alm
+    sshfs \
+        -o auto_unmount \
+        -o auto_cache \
+        -F $HOME/.ssh/config \
+        alm:/var/www/alm/analytics-and-reporting /mnt/alm/ &
+end
+
+function vm
+    sudo systemctl start libvirtd.service && sudo virsh net-start default 2&>/dev/null
+    nohup virt-manager 2&>/dev/null &
+    # sudo systemctl start libvirtd.service && sudo virsh net-start default 2&>/dev/null
+    # sudo virsh --connect qemu:///system start $argv[1]
+end
