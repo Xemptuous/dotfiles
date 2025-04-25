@@ -8,12 +8,14 @@ if test "$(count $argv)" -ge 1
         set from latte
         set to mocha
         set ftheme "Catppuccin Mocha"
+        set -U LS_COLORS (vivid generate catppuccin-mocha)
         sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     else if test $argv[1] = off
         set -U NIGHTMODE off
         set from mocha
         set to latte
         set ftheme "Catppuccin Latte"
+        set -U LS_COLORS (vivid generate catppuccin-latte)
         sed -i s/dark/light/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     end
 else
@@ -22,14 +24,22 @@ else
         set from mocha
         set to latte
         set ftheme "Catppuccin Latte"
+        set -U LS_COLORS (vivid generate catppuccin-latte)
         sed -i s/dark/light/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     else
         set -U NIGHTMODE on
         set from latte
         set to mocha
         set ftheme "Catppuccin Mocha"
+        set -U LS_COLORS (vivid generate catppuccin-mocha)
         sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     end
+end
+
+# st term
+if test -e /usr/local/share/st
+    sed -i "s/$from/$to/" /usr/local/share/st/config.h 2&>/dev/null &
+    make -C /usr/local/share/st -s -j2
 end
 
 sed -i "s/$from/$to/" ~/.config/fish/config.fish 2&>/dev/null &
@@ -43,6 +53,9 @@ sed -i "s/$from/$to/" ~/.config/helix/config.toml 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/zellij/config.kdl 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/foot/foot.ini 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/hypr/hyprland.conf 2&>/dev/null &
+
+# eza theme
+cp ~/.config/eza/$to.yml ~/.config/eza/theme.yml
 
 # swaymsg reload &
 echo y | fish_config theme save "$ftheme" &
@@ -63,10 +76,5 @@ if test "$(pgrep qute)" != ""
     end
 end
 
-sh ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null &
-
-# st term
-if test -e /usr/local/share/st
-    sed -i "s/$from/$to/" /usr/local/share/st/config.h 2&>/dev/null &
-    make -C /usr/local/share/st -s -j2 &
-end
+sh /home/xempt/.scripts/shuffle_wallpaper.sh 2&>/dev/null &
+exit
