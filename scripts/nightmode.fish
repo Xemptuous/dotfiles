@@ -6,13 +6,13 @@ if test "$(count $argv)" -ge 1
     if test $argv[1] = on
         set -U NIGHTMODE on
         set from latte
-        set to mocha
-        set ftheme "Catppuccin Mocha"
-        set -U LS_COLORS (vivid generate catppuccin-mocha)
+        set to frappe
+        set ftheme "Catppuccin Frappe"
+        set -U LS_COLORS (vivid generate catppuccin-frappe)
         sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     else if test $argv[1] = off
         set -U NIGHTMODE off
-        set from mocha
+        set from frappe
         set to latte
         set ftheme "Catppuccin Latte"
         set -U LS_COLORS (vivid generate catppuccin-latte)
@@ -21,7 +21,7 @@ if test "$(count $argv)" -ge 1
 else
     if test $NIGHTMODE = on
         set -U NIGHTMODE off
-        set from mocha
+        set from frappe
         set to latte
         set ftheme "Catppuccin Latte"
         set -U LS_COLORS (vivid generate catppuccin-latte)
@@ -29,18 +29,18 @@ else
     else
         set -U NIGHTMODE on
         set from latte
-        set to mocha
-        set ftheme "Catppuccin Mocha"
-        set -U LS_COLORS (vivid generate catppuccin-mocha)
+        set to frappe
+        set ftheme "Catppuccin Frappe"
+        set -U LS_COLORS (vivid generate catppuccin-frappe)
         sed -i s/light/dark/ ~/.scripts/shuffle_wallpaper.sh 2&>/dev/null
     end
 end
 
-# st term
-if test -e /usr/local/share/st
-    sed -i "s/$from/$to/" /usr/local/share/st/config.h 2&>/dev/null &
-    make -C /usr/local/share/st -s -j2
-end
+# # st term
+# if test -e /usr/local/share/st
+#     sed -i "s/$from/$to/" /usr/local/share/st/config.h 2&>/dev/null &
+#     make -C /usr/local/share/st -s -j2
+# end
 
 sed -i "s/$from/$to/" ~/.config/fish/config.fish 2&>/dev/null &
 sed -i "s/$from/$to/" ~/.config/fish/exports.fish 2&>/dev/null &
