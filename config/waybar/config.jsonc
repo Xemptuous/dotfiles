@@ -12,13 +12,16 @@
   ],
   "modules-right": [
     // "pulseaudio",
+    "wireplumber",
     "cpu",
     "temperature",
     "memory",
     "disk",
     "network",
+    "custom/vpn",
     // "battery",
-    "tray"
+    "tray",
+    "gpu"
   ],
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -39,8 +42,10 @@
     "window-rewrite-default": "",
     "window-rewrite": {
       "class<Alacritty>": "",
+      "class<Foot>": "",
       "class<org.qutebrowser.qutebrowser>": "",
       "class<Alacritty> title<.*nv.*": "",
+      "class<Foot> title<.*nv.*": "",
       "class<steam>": ""
     }
   },
@@ -81,6 +86,16 @@
       "on-scroll-down": "shift_down"
     }
   },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
   "pulseaudio": {
     "format": "{icon} {volume:2}%",
     "format-bluetooth": "{icon}  {volume}%",
@@ -107,6 +122,12 @@
     "on-click": "st -e 'nmtui'",
     "on-click-right": "$HOME/.config/waybar/toggle_network.sh"
   },
+  "custom/vpn": {
+    "interval": 3,
+    "format": "󰖂 {}",
+    "exec": "ip add show | grep -qF tun0 && echo 🔒 Connected || echo 🔓 Disconnected",
+    "max-length": "100"
+  },
   "memory": {
     "interval": 5,
     // "format": "Mem {}%"
@@ -122,7 +143,7 @@
     "critical-threshold": 80,
     "interval": 1,
     // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C",
+    "format": "{temperatureC}°C"
     // "format-icons": ["", "", ""]
   },
   // "battery": {
@@ -147,6 +168,12 @@
     "unit": "GiB",
     "format": " {specific_used:0.1f}/{specific_total:0.1f}"
   },
+  "gpu": {
+    "exec": "~/.scripts/get_vram_waybar.sh",
+    "format": " {}",
+    "return-type": "",
+    "interval": 1
+  }
   // "tray": {
   // 	"icon-size": 20
   // }

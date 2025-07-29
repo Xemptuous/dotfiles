@@ -24,4 +24,6 @@
 @define-color base #1e1e2e;
 @define-color mantle #181825;
 @define-color crust #11111b;
+@define-color surface0opaque rgba(49, 50, 68, 0.4);
+@define-color baseopaque rgba(30, 30, 46, 0.4);
 @define-color crustopaque rgba(17, 17, 27, 0.4);

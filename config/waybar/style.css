@@ -1,4 +1,5 @@
-@import "mocha.css";
+@import "selenized.css";
+/* @import "frappe.css"; */
 
 * {
   font-size: 13px;
@@ -12,13 +13,16 @@ window#waybar {
 
 
 #clock,
+#wireplumber,
 #pulseaudio,
 #memory,
+#custom-vpn,
 #network,
 #temperature,
 #cpu,
 #battery,
 #disk,
+#gpu,
 #tray {
   background: @crust;
   /* background: @base; */
@@ -27,6 +31,16 @@ window#waybar {
   border-radius: 0rem;
   margin: 5px 10px;
   padding: 0rem 1rem;
+}
+
+#tray menu {
+  background-color: @crustopaque;
+  color: @text;
+}
+
+#tray menu menuitem:hover {
+  background-color: @surface0opaque;
+  color: @text;
 }
 
 tooltip {
@@ -61,8 +75,10 @@ tooltip {
   color: @subtext1;
 }
 
+#wireplumber,
 #pulseaudio {
   color: #268bd2;
+  border-radius: 1rem 0 0 1rem;
 }
 
 #memory {
@@ -71,7 +87,7 @@ tooltip {
 
 #cpu {
   color: @blue;
-  border-radius: 1rem 0 0 1rem;
+  border-radius: 0rem 0 0 0rem;
 }
 
 
@@ -87,9 +103,14 @@ tooltip {
   color: #859900;
 }
 
+#custom-vpn {
+  color: @blue;
+  border-radius: 0 1rem 1rem 1;
+}
+
 #network {
   color: @sky;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 0rem 0rem 0;
 }
 
 #network.disabled,
@@ -101,19 +122,26 @@ tooltip {
   color: @green;
 }
 
+#gpu {
+  color: @red;
+}
+
 #clock {
   border-radius: 1rem;
 }
 
 #tray,
 #clock,
+#wireplumber,
 #pulseaudio,
 #memory,
 #cpu,
 #temperature,
+#custom-vpn,
 #network,
 #battery,
-#disk {
+#disk,
+#gpu {
   background-color: @crustopaque;
   padding: 0 1rem;
   margin: 5px 0;
