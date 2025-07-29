@@ -1,0 +1,9 @@
+[Unit]
+Description="OpenFront.io screenshot counter inotifywait"
+
+[Service]
+ExecStart=/home/xempt/.scripts/openfront_io_counter.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
