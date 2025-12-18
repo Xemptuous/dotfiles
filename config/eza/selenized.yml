@@ -20,22 +20,22 @@ perms:
   group_read: {foreground: "#adbcbc"}
   group_write: {foreground: "#dbb32d"}
   group_execute: {foreground: "#75b938"}
-  other_read: {foreground: "#72898f"}
+  other_read: {foreground: "#2d5b69"}
   other_write: {foreground: "#dbb32d"}
   other_execute: {foreground: "#75b938"}
   special_user_file: {foreground: "#af88eb"}
   special_other: {foreground: "#103c48"}
-  attribute: {foreground: "#72898f"}
+  attribute: {foreground: "#2d5b69"}
 
 size:
-  major: {foreground: "#72898f"}
+  major: {foreground: "#2d5b69"}
   minor: {foreground: "#53d6c7"}
   number_byte: {foreground: "#cad8d9"}
   number_kilo: {foreground: "#adbcbc"}
   number_mega: {foreground: "#4695f7"}
   number_giga: {foreground: "#af88eb"}
   number_huge: {foreground: "#af88eb"}
-  unit_byte: {foreground: "#72898f"}
+  unit_byte: {foreground: "#2d5b69"}
   unit_kilo: {foreground: "#4695f7"}
   unit_mega: {foreground: "#af88eb"}
   unit_giga: {foreground: "#af88eb"}
@@ -72,7 +72,7 @@ security_context:
   colon: {foreground: "#184956"}
   user: {foreground: "#adbcbc"}
   role: {foreground: "#af88eb"}
-  typ: {foreground: "#103c48"}
+  typ: {foreground: "#2d5b69"}
   range: {foreground: "#af88eb"}
 
 file_type:
@@ -80,18 +80,18 @@ file_type:
   video: {foreground: "#fa5750"}
   music: {foreground: "#75b938"}
   lossless: {foreground: "#41c7b9"}
-  crypto: {foreground: "#103c48"}
+  crypto: {foreground: "#2d5b69"}
   document: {foreground: "#cad8d9"}
   compressed: {foreground: "#f275be"}
-  temp: {foreground: "#72898f"}
+  temp: {foreground: "#2d5b69"}
   compiled: {foreground: "#58a3ff"}
-  build: {foreground: "#103c48"}
+  build: {foreground: "#2d5b69"}
   source: {foreground: "#af88eb"}
   # source: {foreground: "#4695f7"}
 
 punctuation: {foreground: "#184956"}
 date: {foreground: "#dbb32d"}
-inode: {foreground: "#72898f"}
+inode: {foreground: "#2d5b69"}
 blocks: {foreground: "#2d5b69"}
 header: {foreground: "#cad8d9"}
 octal: {foreground: "#41c7b9"}
@@ -101,5 +101,4 @@ symlink_path: {foreground: "#53d6c7"}
 control_char: {foreground: "#58a3ff"}
 broken_symlink: {foreground: "#fa5750"}
 broken_path_overlay: {foreground: "#103c48"}
-
 
